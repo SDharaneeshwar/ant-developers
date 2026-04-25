@@ -14,13 +14,14 @@ type GalleryItem = {
 
 const galleryItems: GalleryItem[] = Array.from({ length: 14 }, (_, i) => ({
   id: i + 1,
-  image: `/gallery/image${i + 1}.png`,
+  image: `/hero-gallery/image${i + 1}.png`,
 }));
 
 export default function Gallery() {
   const [activeId, setActiveId] = useState<number | null>(null);
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const prefersReducedMotion = useReducedMotion();
+
   const { ref, inView } = useInView({
     threshold: 0.2,
     triggerOnce: false,
@@ -45,7 +46,10 @@ export default function Gallery() {
             GALLERY
           </p>
 
-          <h2 className="mt-6 section-title">A living stream of our learning moments</h2>
+          <h2 className="mt-6 section-title">
+            A living stream of our learning moments
+          </h2>
+
           <p className="section-copy mx-auto">
             Workshops, training sessions, team learning, and practical development experiences.
           </p>

@@ -129,7 +129,7 @@ export default function Navbar() {
                   <a
                     key={link.label}
                     href={link.href}
-                    className="text-sm font-medium text-slate-200 transition hover:text-white"
+                    className="relative text-sm font-semibold text-slate-200 transition duration-300 hover:text-brand-orange after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-0 after:rounded-full after:bg-brand-orange after:transition-all after:duration-300 hover:after:w-full"
                     onClick={() =>
                       trackEvent("navbar_link_click", { label: link.label })
                     }
@@ -141,7 +141,7 @@ export default function Navbar() {
                     key={link.label}
                     href={link.href}
                     prefetch={false}
-                    className="text-sm font-medium text-slate-200 transition hover:text-white"
+                    className="relative text-sm font-semibold text-slate-200 transition duration-300 hover:text-brand-orange after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-0 after:rounded-full after:bg-brand-orange after:transition-all after:duration-300 hover:after:w-full"
                     onClick={() =>
                       trackEvent("navbar_link_click", { label: link.label })
                     }
