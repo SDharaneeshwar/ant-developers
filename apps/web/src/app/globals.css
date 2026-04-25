@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================= ROOT THEME ================= */
+:root {
+  --bg: #0f172a;
+  --bg-soft: #1e293b;
+  --beige: #f5e6d3;
+  --beige-soft: #fff7ed;
+  --orange: #e67e22;
+  --orange-dark: #c96a16;
+  --text: #f8fafc;
+  --muted: #cbd5e1;
+  --line: rgba(255, 255, 255, 0.08);
+}
+
+/* ================= GLOBAL ================= */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at top, rgba(230, 126, 34, 0.12), transparent 30%),
+    linear-gradient(180deg, #0b1220 0%, #0f172a 40%, #111827 100%);
+  color: var(--text);
+  font-family: Inter, system-ui, sans-serif;
+}
+
+/* ================= LAYOUT ================= */
+.section-shell {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+/* ================= GLASS SYSTEM ================= */
+.glass-card {
+  @apply border border-white/10 bg-white/10 backdrop-blur-xl shadow-[0_8px_32px_rgba(15,23,42,0.18)] transition duration-300;
+}
+
+.glass-card-hover {
+  @apply hover:-translate-y-1 hover:bg-white/10 hover:shadow-[0_16px_40px_rgba(15,23,42,0.24)];
+}
+
+.glass-card-interactive {
+  @apply cursor-pointer hover:-translate-y-1 hover:bg-white/10 hover:shadow-[0_16px_40px_rgba(15,23,42,0.24)] active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-brand-orange/40;
+}
+
+/* ================= TYPOGRAPHY ================= */
+.section-title {
+  @apply text-3xl font-semibold tracking-tight md:text-5xl;
+}
+
+.section-copy {
+  @apply mt-4 max-w-2xl text-base leading-7 text-slate-300 md:text-lg;
+}
+
+/* ================= BUTTONS ================= */
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-full bg-brand-orange px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:bg-brand-orangeDark active:scale-[0.98];
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:bg-white/10 active:scale-[0.98];
+}
+
+/* ================= INPUTS ================= */
+.input {
+  @apply w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition duration-200 placeholder:text-slate-400 focus:border-brand-orange focus:ring-1 focus:ring-brand-orange;
+}
+
+.input option {
+  background-color: #0f172a;
+  color: white;
+}
+
+select.input {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #cbd5e1 50%),
+    linear-gradient(135deg, #cbd5e1 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) calc(50% - 2px),
+    calc(100% - 12px) calc(50% - 2px);
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.date-input::-webkit-calendar-picker-indicator {
+  filter: invert(1) opacity(0.7);
+  cursor: pointer;
+}
+
+/* ================= ERROR ================= */
+.error {
+  @apply mt-1 min-h-[20px] text-sm text-red-400;
+}
+
+/* ================= PREMIUM DAYPICKER ================= */
+.premium-daypicker .rdp-root {
+  --rdp-accent-color: #e67e22;
+  --rdp-accent-background-color: rgba(230, 126, 34, 0.14);
+  --rdp-day_button-border-radius: 12px;
+  --rdp-day-width: 40px;
+  --rdp-day-height: 40px;
+  --rdp-day_button-width: 40px;
+  --rdp-day_button-height: 40px;
+  --rdp-disabled-opacity: 0.35;
+  margin: 0;
+}
+
+.premium-daypicker .rdp-months {
+  width: 100%;
+}
+
+.premium-daypicker .rdp-month {
+  width: 100%;
+}
+
+.premium-daypicker .rdp-weekdays {
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.premium-daypicker .rdp-month_grid {
+  border-collapse: separate;
+  border-spacing: 0.35rem;
+}
+
+.premium-daypicker .rdp-nav {
+  display: none;
+}
+
+.premium-daypicker .rdp-day {
+  padding: 0;
+}
+
+.premium-daypicker .rdp-day_button {
+  margin: 0;
+}
+
+/* ================= PREMIUM RADIX SELECT ================= */
+[data-radix-select-content] {
+  background: #0b1633 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 1rem !important;
+  overflow: hidden !important;
+  backdrop-filter: blur(20px);
+}
+
+[data-radix-select-content] [role="option"] {
+  color: white !important;
+  border-radius: 0.75rem !important;
+  transition: background-color 0.2s ease, color 0.2s ease !important;
+}
+
+[data-radix-select-content] [role="option"]:hover,
+[data-radix-select-content] [role="option"][data-highlighted] {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: white !important;
+}
+
+[data-radix-select-content] [role="option"][data-state="checked"] {
+  background: rgba(249, 115, 22, 0.14) !important;
+  color: white !important;
+}
+
+[data-radix-select-content] [role="option"]:focus,
+[data-radix-select-content] [role="option"]:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
