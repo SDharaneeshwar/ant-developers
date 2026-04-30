@@ -15,7 +15,7 @@ export default function Contact() {
             <div className="h-[340px] w-full sm:h-[380px] lg:h-[420px]">
               <iframe
                 title="Team Concept Learners Location"
-                src="https://www.google.com/maps?q=12A,%20Sengunthar%20Nagar%206th%20Street%20Peryasemur%20Post%20Erode%20638004&z=15&output=embed"
+                src="https://www.google.com/maps/place/ANT+DEVELOPERS/@13.0585564,80.0469449,15z/data=!4m10!1m2!2m1!1sNo+35,+Gundumedu+puthuvattaram,+Thirumazhisai,+Chennai-+600123,+Tamilnadu.!3m6!1s0x3a528b6bcb16beb1:0x79358cd8ead64fa5!8m2!3d13.0507779!4d80.0673201!15sCkpObyAzNSwgR3VuZHVtZWR1IHB1dGh1dmF0dGFyYW0sIFRoaXJ1bWF6aGlzYWksIENoZW5uYWktIDYwMDEyMywgVGFtaWxuYWR1LpIBF2VkdWNhdGlvbmFsX2luc3RpdHV0aW9u4AEA!16s%2Fg%2F11k2hyxydk?entry=ttu&g_ep=EgoyMDI2MDQyNy4wIKXMDSoASAFQAw%3D%3D"
                 width="100%"
                 height="100%"
                 loading="lazy"
