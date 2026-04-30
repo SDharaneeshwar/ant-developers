@@ -29,16 +29,16 @@ export default function Contact() {
           {/* Right - Contact Details */}
           <div className="glass-card rounded-[28px] p-6 sm:p-7 lg:p-8">
             <h3 className="text-2xl font-semibold leading-tight text-white sm:text-3xl">
-              Team Concept
+              ANT
               <br />
-              Learners
+              Devlopers
             </h3>
 
             <div className="mt-8 space-y-6">
               <ContactItem
                 icon={<Phone className="h-5 w-5" />}
-                href="tel:+919600266639"
-                label="+91 9600266639"
+                href="tel:+919789682485"
+                label="+91 9789682485"
               />
 
               <ContactItem
@@ -59,11 +59,11 @@ export default function Contact() {
                   className="group inline-block text-base leading-8 text-slate-200 transition-colors duration-300 hover:text-brand-orange sm:text-lg"
                 >
                   <span className="bg-gradient-to-r from-brand-orange to-brand-orange bg-[length:0%_1px] bg-left-bottom bg-no-repeat transition-[background-size,color] duration-300 group-hover:bg-[length:100%_1px]">
-                    12A, Sengunthar Nagar 6th Street,
+                    No 35, Gundumedu puthuvattaram,
                     <br />
-                    Peryasemur Post,
+                    Thirumazhisai,
                     <br />
-                    Erode - 638004
+                    Chennai- 600123, Tamilnadu.
                   </span>
                 </a>
               </div>

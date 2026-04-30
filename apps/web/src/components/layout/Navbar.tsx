@@ -10,14 +10,14 @@ import { trackEvent } from "@/lib/track";
 const desktopLinks = [
   { label: "Home", href: "/", type: "route" as const },
   { label: "About", href: "/#about", type: "anchor" as const },
-  { label: "Courses", href: "/courses", type: "route" as const },
+  { label: "Courses", href: "/#courses", type: "anchor" as const },
   { label: "Gallery", href: "/gallery", type: "route" as const },
 ];
 
 const mobileLinks = [
   { label: "Home", href: "/", type: "route" as const },
   { label: "About", href: "/#about", type: "anchor" as const },
-  { label: "Courses", href: "/courses", type: "route" as const },
+  { label: "Courses", href: "/#courses", type: "anchor" as const },
   { label: "Gallery", href: "/gallery", type: "route" as const },
   { label: "Enroll", href: "/enroll", type: "route" as const },
 ];
@@ -117,7 +117,7 @@ export default function Navbar() {
               {[
                 { label: "Home", href: "/", type: "route" as const },
                 { label: "About", href: "/#about", type: "anchor" as const },
-                { label: "Courses", href: "/courses", type: "route" as const },
+                { label: "Courses", href: "/#courses", type: "anchor" as const },
                 {
                   label: "Testimonials",
                   href: "/#testimonials",
