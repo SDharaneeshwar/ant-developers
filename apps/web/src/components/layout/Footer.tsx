@@ -55,7 +55,7 @@ export default function Footer() {
             {/* 🔥 WhatsApp CTA with Tracking */}
             <div className="mt-6">
               <a
-                href="https://wa.me/919600266639"
+                href="https://wa.me/919789682485"
                 target="_blank"
                 rel="noreferrer"
                 onClick={() =>
