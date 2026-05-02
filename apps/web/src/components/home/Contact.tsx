@@ -80,8 +80,8 @@ export default function Contact() {
 
               <ContactItem
                 icon={<Mail className="h-5 w-5" />}
-                href="mailto:admin@antdevelopers.com"
-                label="admin@antdevelopers.com"
+                href="mailto:admin@ant-developers.com"
+                label="admin@ant-developers.com"
               />
 
               <div className="flex items-start gap-4">

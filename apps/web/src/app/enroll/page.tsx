@@ -13,12 +13,8 @@ import { formatDateForInput, parseInputDate } from "@/lib/date";
 import { trackEvent } from "@/lib/track";
 
 const courseOptions = [
-  { label: "Aptitude Training", value: "Aptitude Training" },
-  { label: "Soft Skills", value: "Soft Skills" },
-  { label: "Technical Training", value: "Technical Training" },
   { label: "Interview Prep", value: "Interview Prep" },
   { label: "Corporate Training", value: "Corporate Training" },
-  { label: "Language Training", value: "Language Training" },
   { label: "Team Building", value: "Team Building" },
 ];
 
