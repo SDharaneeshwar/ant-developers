@@ -1,25 +1,9 @@
-export default function Testimonials() {
-  const testimonials = [
-    {
-      name: "Placement Candidate",
-      role: "Student",
-      quote:
-        "The training improved my confidence, communication, and interview preparation in a very practical way.",
-    },
-    {
-      name: "Final Year Learner",
-      role: "Job Seeker",
-      quote:
-        "The aptitude and technical sessions were structured clearly and helped me perform better in placement rounds.",
-    },
-    {
-      name: "Training Coordinator",
-      role: "Institution",
-      quote:
-        "The sessions were professional, engaging, and highly valuable for our students’ career readiness.",
-    },
-  ];
+import Link from "next/link";
+import { testimonials } from "@/lib/testimonials";
 
+const previewTestimonials = testimonials.slice(0, 3);
+
+export default function Testimonials() {
   return (
     <section id="testimonials" className="py-24">
       <div className="section-shell">
@@ -28,30 +12,62 @@ export default function Testimonials() {
             TESTIMONIALS
           </p>
 
-          <h2 className="mt-6 section-title">What people say about our training</h2>
+          <h2 className="mt-6 section-title">
+            What people say about our training
+          </h2>
+
           <p className="section-copy mx-auto">
             Premium learning experiences built around confidence, clarity, and growth.
           </p>
         </div>
 
+        {/* 🔥 ONLY FIRST 3 */}
         <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {testimonials.map((item) => (
+          {previewTestimonials.map((item, index) => (
             <div
-              key={item.name}
+              key={index}
               className="glass-card rounded-3xl p-6 transition duration-300 hover:-translate-y-1 hover:bg-white/10"
             >
-              <div className="text-4xl leading-none text-brand-orange">“</div>
 
+              {/* MESSAGE */}
               <p className="mt-4 text-base leading-8 text-slate-200">
-                {item.quote}
+                {item.message}
               </p>
 
+              {/* ⭐ DYNAMIC RATING */}
+              <div className="mt-4 flex items-center gap-1 text-yellow-400">
+                {Array.from({ length: Math.floor(item.rating) }).map((_, i) => (
+                  <span key={i}>★</span>
+                ))}
+                {item.rating % 1 !== 0 && <span>☆</span>}
+              </div>
+
+              {/* USER INFO */}
               <div className="mt-6 border-t border-white/10 pt-4">
-                <div className="text-base font-semibold text-white">{item.name}</div>
-                <div className="mt-1 text-sm text-brand-beige">{item.role}</div>
+                <div className="text-base font-semibold text-white">
+                  {item.name}
+                </div>
+
+                <div className="mt-1 text-sm text-brand-beige">
+                  {item.designation}
+                </div>
+
+                <div className="text-xs text-slate-400 mt-1">
+                  {item.company}
+                </div>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* 🔥 VIEW MORE BUTTON */}
+        <div className="mt-10 flex justify-center">
+          <Link
+            href="/testimonials"
+            className="inline-flex items-center justify-center rounded-full border border-brand-orange px-5 py-2.5 text-sm font-semibold text-brand-beige transition duration-300 hover:bg-brand-orange hover:text-white"
+          >
+            View More Testimonials
+          </Link>
         </div>
       </div>
     </section>

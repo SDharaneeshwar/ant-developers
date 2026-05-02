@@ -33,6 +33,9 @@ export default function Footer() {
               <Link href="/courses" className="text-slate-400 hover:text-white">
                 Courses
               </Link>
+              <Link href="/testimonials" className="text-slate-400 hover:text-white">
+                Testimonials
+              </Link>
               <Link href="/gallery" className="text-slate-400 hover:text-white">
                 Gallery
               </Link>
