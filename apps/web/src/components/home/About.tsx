@@ -1,20 +1,20 @@
 export default function About() {
   return (
-    <section id="about" className="py-24">
+    <section id="about" className="bg-light-section py-24">
       <div className="section-shell">
         {/* Row 1 */}
         <div className="grid gap-12 xl:grid-cols-2 xl:items-start">
           {/* Left: Main Content */}
           <div>
-            <p className="inline-flex w-fit rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium tracking-[0.18em] text-brand-beige sm:text-sm">
+            <p className="inline-flex w-fit rounded-full border border-[#041c32]/10 bg-white/70 px-4 py-2 text-xs font-semibold tracking-[0.18em] text-[#041c32] shadow-sm backdrop-blur-xl sm:text-sm">
               ABOUT US
             </p>
 
-            <h2 className="mt-6 max-w-3xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            <h2 className="mt-6 max-w-3xl text-4xl font-semibold tracking-tight text-[#041c32] sm:text-5xl lg:text-6xl">
               Premium training designed for real-world growth
             </h2>
 
-            <div className="mt-6 max-w-3xl space-y-5 text-base leading-8 text-slate-300 sm:text-lg">
+            <div className="mt-6 max-w-3xl space-y-5 text-base leading-8 text-[#475569] sm:text-lg">
               <p>
                 ANT Developers helps students, job seekers, institutions, and
                 organizations build strong technical, communication, aptitude,
@@ -28,19 +28,21 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right: Why Choose Us Card with Glow */}
+          {/* Right: Why Choose Us Card */}
           <div className="relative xl:pt-10">
-            <div className="pointer-events-none absolute -left-6 top-10 -z-10 h-40 w-40 rounded-full bg-brand-orange/20 blur-3xl" />
-            <div className="glass-card rounded-3xl p-8 transition duration-300 hover:-translate-y-1 hover:bg-white/10 sm:p-10">
-              <div className="text-sm font-medium uppercase tracking-[0.18em] text-brand-beige">
+            {/* Glow */}
+            <div className="pointer-events-none absolute -left-8 top-8 -z-10 h-44 w-44 rounded-full bg-[#f5ea00]/20 blur-3xl" />
+
+            <div className="light-card light-card-hover rounded-3xl p-8 sm:p-10">
+              <div className="text-sm font-semibold uppercase tracking-[0.18em] text-[#7a8ea5]">
                 Why choose us
               </div>
 
-              <h3 className="mt-4 text-2xl font-semibold leading-tight text-white sm:text-3xl">
+              <h3 className="mt-4 text-2xl font-semibold leading-tight text-[#041c32] sm:text-3xl">
                 Practical. Premium. Career-focused.
               </h3>
 
-              <p className="mt-5 text-base leading-8 text-slate-300 sm:text-lg">
+              <p className="mt-5 text-base leading-8 text-[#475569] sm:text-lg">
                 Every program is designed to build real confidence and measurable
                 improvement through structured learning, hands-on delivery, and
                 real-world application.
@@ -49,36 +51,56 @@ export default function About() {
           </div>
         </div>
 
-        {/* Row 2: 4 Cards */}
+        {/* Row 2: Cards */}
         <div className="mt-14 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-          <div className="glass-card rounded-3xl p-6 transition duration-300 hover:-translate-y-1 hover:bg-white/10">
-            <div className="text-2xl font-semibold text-brand-beige">
+          {/* Card 1 */}
+          <div className="light-card light-card-hover rounded-3xl p-6">
+            <div className="text-2xl font-semibold text-[#041c32]">
               Student
             </div>
-            <p className="mt-3 text-sm leading-7 text-slate-300 sm:text-base">
+
+            <div className="mt-3 h-1 w-14 rounded-full bg-[#f5ea00]" />
+
+            <p className="mt-4 text-sm leading-7 text-[#475569] sm:text-base">
               Placement-focused learning for interviews, communication, and aptitude.
             </p>
           </div>
 
-          <div className="glass-card rounded-3xl p-6 transition duration-300 hover:-translate-y-1 hover:bg-white/10">
-            <div className="text-2xl font-semibold text-brand-beige">
+          {/* Card 2 */}
+          <div className="light-card light-card-hover rounded-3xl p-6">
+            <div className="text-2xl font-semibold text-[#041c32]">
               Corporate
             </div>
-            <p className="mt-3 text-sm leading-7 text-slate-300 sm:text-base">
+
+            <div className="mt-3 h-1 w-14 rounded-full bg-[#f5ea00]" />
+
+            <p className="mt-4 text-sm leading-7 text-[#475569] sm:text-base">
               Business-ready training programs for team development and productivity.
             </p>
           </div>
 
-          <div className="glass-card rounded-3xl p-6 transition duration-300 hover:-translate-y-1 hover:bg-white/10">
-            <div className="text-4xl font-semibold text-brand-beige">7+</div>
-            <p className="mt-4 text-sm leading-7 text-slate-300 sm:text-base">
+          {/* Card 3 */}
+          <div className="light-card light-card-hover rounded-3xl p-6">
+            <div className="text-4xl font-semibold text-[#041c32]">
+              7+
+            </div>
+
+            <div className="mt-3 h-1 w-14 rounded-full bg-[#f5ea00]" />
+
+            <p className="mt-4 text-sm leading-7 text-[#475569] sm:text-base">
               Training verticals across academics, careers, and corporate learning.
             </p>
           </div>
 
-          <div className="glass-card rounded-3xl p-6 transition duration-300 hover:-translate-y-1 hover:bg-white/10">
-            <div className="text-4xl font-semibold text-brand-beige">100%</div>
-            <p className="mt-4 text-sm leading-7 text-slate-300 sm:text-base">
+          {/* Card 4 */}
+          <div className="light-card light-card-hover rounded-3xl p-6">
+            <div className="text-4xl font-semibold text-[#041c32]">
+              100%
+            </div>
+
+            <div className="mt-3 h-1 w-14 rounded-full bg-[#f5ea00]" />
+
+            <p className="mt-4 text-sm leading-7 text-[#475569] sm:text-base">
               Focus on practical delivery, clarity, and learner confidence.
             </p>
           </div>

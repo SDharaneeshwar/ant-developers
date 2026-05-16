@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { testimonials } from "@/lib/testimonials";
+import BackArrow from "@/components/layout/BackArrow";
 
 export const metadata: Metadata = {
   title: "Testimonials",
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
 export default function TestimonialsPage() {
   return (
     <>
+    <BackArrow />
       <Navbar />
 
       <main className="min-h-screen bg-hero-glow px-4 py-28 sm:px-6 lg:px-8">

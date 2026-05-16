@@ -5,7 +5,7 @@ import path from "path";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import GalleryActions from "@/components/gallery/GalleryActions";
-
+import BackArrow from "@/components/layout/BackArrow";
 export const metadata: Metadata = {
   title: "Gallery",
   description:
@@ -41,6 +41,7 @@ export default function GalleryPage() {
 
   return (
     <>
+      <BackArrow/>
       <Navbar />
 
       <main className="min-h-screen bg-hero-glow px-4 py-28 sm:px-6 lg:px-8">

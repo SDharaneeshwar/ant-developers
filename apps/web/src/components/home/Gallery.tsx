@@ -39,19 +39,20 @@ export default function Gallery() {
   const activeItem = galleryItems.find((item) => item.id === activeId) ?? null;
 
   return (
-    <section id="gallery" className="py-24" ref={ref}>
+    <section id="gallery" className="bg-light-section py-24" ref={ref}>
       <div className="section-shell">
         <div className="text-center">
-          <p className="inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium tracking-[0.18em] text-brand-beige sm:text-sm">
+          <p className="inline-flex rounded-full border border-[#041C32]/10 bg-white/70 px-4 py-2 text-xs font-bold tracking-[0.18em] text-[#041C32] shadow-[0_10px_30px_rgba(4,28,50,0.08)] sm:text-sm">
             GALLERY
           </p>
 
-          <h2 className="mt-6 section-title">
+          <h2 className="mt-6 section-title text-[#041C32]">
             A living stream of our learning moments
           </h2>
 
-          <p className="section-copy mx-auto">
-            Workshops, training sessions, team learning, and practical development experiences.
+          <p className="section-copy mx-auto text-[#334155]">
+            Workshops, training sessions, team learning, and practical development
+            experiences.
           </p>
         </div>
 
@@ -75,7 +76,7 @@ export default function Gallery() {
         <div className="mt-10 flex justify-center">
           <Link
             href="/gallery"
-            className="inline-flex items-center justify-center rounded-full border border-brand-orange px-5 py-2.5 text-sm font-semibold text-brand-beige transition duration-300 hover:bg-brand-orange hover:text-white"
+            className="inline-flex items-center justify-center rounded-full border border-[#F5EA00] bg-[#F5EA00] px-5 py-2.5 text-sm font-extrabold text-[#041C32] shadow-[0_14px_35px_rgba(245,234,0,0.22)] transition duration-300 hover:bg-[#FFD84D] hover:shadow-[0_18px_45px_rgba(245,234,0,0.3)] active:scale-[0.98]"
           >
             View More
           </Link>
@@ -85,14 +86,14 @@ export default function Gallery() {
       <AnimatePresence>
         {activeItem && (
           <motion.div
-            className="fixed inset-0 z-[80] flex items-center justify-center bg-slate-950/85 p-4 backdrop-blur-md"
+            className="fixed inset-0 z-[80] flex items-center justify-center bg-[#041C32]/88 p-4 backdrop-blur-md"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setActiveId(null)}
           >
             <motion.div
-              className="relative w-full max-w-5xl overflow-hidden rounded-[28px] border border-white/10 bg-slate-950/80 shadow-[0_20px_60px_rgba(0,0,0,0.4)]"
+              className="relative w-full max-w-5xl overflow-hidden rounded-[28px] border border-white/10 bg-[#041C32]/90 shadow-[0_24px_70px_rgba(4,28,50,0.45)]"
               initial={{ opacity: 0, scale: 0.96, y: 16 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.96, y: 16 }}
@@ -102,7 +103,7 @@ export default function Gallery() {
               <button
                 type="button"
                 onClick={() => setActiveId(null)}
-                className="absolute right-4 top-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-slate-900/70 text-white transition hover:bg-white/10"
+                className="absolute right-4 top-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-[#041C32]/80 text-white transition hover:bg-[#F5EA00] hover:text-[#041C32]"
                 aria-label="Close image preview"
               >
                 <X className="h-5 w-5" />
@@ -187,7 +188,7 @@ function GalleryRow({
               onFocus={() => onHover(item.id)}
               onBlur={() => onHover(null)}
               onClick={() => onOpen(item.id)}
-              className="group relative block w-[280px] shrink-0 overflow-hidden rounded-[28px] border border-white/10 bg-white/5 text-left shadow-[0_10px_30px_rgba(15,23,42,0.18)] backdrop-blur-xl sm:w-[340px] lg:w-[380px]"
+              className="group relative block w-[280px] shrink-0 overflow-hidden rounded-[28px] border border-[#041C32]/10 bg-white/75 text-left shadow-[0_14px_40px_rgba(4,28,50,0.12)] backdrop-blur-xl transition duration-300 sm:w-[340px] lg:w-[380px]"
               animate={{
                 y: prefersReducedMotion ? 0 : [0, -5, 0],
                 scale: isHovered ? 1.08 : someHovered ? 0.96 : 1,
@@ -211,18 +212,21 @@ function GalleryRow({
                   src={item.image}
                   alt="Gallery image"
                   fill
-                  className="object-cover transition duration-500"
+                  className="object-cover transition duration-500 group-hover:scale-105"
                   sizes="(max-width: 640px) 280px, (max-width: 1024px) 340px, 380px"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-[#041C32]/55 via-transparent to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
+
+                <div className="absolute inset-x-0 bottom-0 h-1 bg-[#F5EA00] opacity-0 transition duration-300 group-hover:opacity-100" />
               </div>
             </motion.button>
           );
         })}
       </motion.div>
 
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#0f172a] to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#0f172a] to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#EAF1F7] via-[#EAF1F7]/80 to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#EAF1F7] via-[#EAF1F7]/80 to-transparent" />
     </div>
   );
 }

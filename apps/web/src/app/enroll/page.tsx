@@ -12,10 +12,16 @@ import Footer from "@/components/layout/Footer";
 import { formatDateForInput, parseInputDate } from "@/lib/date";
 import { trackEvent } from "@/lib/track";
 
-const courseOptions = [
-  { label: "Interview Prep", value: "Interview Prep" },
+const activityOptions = [
+  { label: "Activities", value: "Activities" },
   { label: "Corporate Training", value: "Corporate Training" },
   { label: "Team Building", value: "Team Building" },
+];
+
+const venueOptions = [
+  { label: "Chennai", value: "Chennai" },
+  { label: "Yelagiri", value: "Yelagiri" },
+  { label: "Yercaud", value: "Yercaud" },
 ];
 
 const heardFromOptions = [
@@ -101,6 +107,7 @@ export default function EnrollPage() {
 
     const diffMs = to.getTime() - from.getTime();
     const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24)) + 1;
+
     setValue("noOfDays", String(diffDays));
   }, [fromDate, toDate, setValue]);
 
@@ -133,6 +140,7 @@ export default function EnrollPage() {
           source: data.heardFrom || "unknown",
           reason: result.message || "submission_failed",
         });
+
         alert(result.message || "Submission failed");
         return;
       }
@@ -168,7 +176,8 @@ export default function EnrollPage() {
             </h1>
 
             <p className="mt-3 text-slate-300">
-              Share your training requirement and our team will get in touch with you.
+              Share your activity or training requirement and our team will get
+              in touch with you.
             </p>
 
             <form onSubmit={handleSubmit(onSubmit)} className="mt-8 space-y-6">
@@ -207,6 +216,7 @@ export default function EnrollPage() {
                   />
                 </FormField>
 
+                {/* Activity Module */}
                 <Controller
                   control={control}
                   name="course"
@@ -214,8 +224,8 @@ export default function EnrollPage() {
                     <PremiumSelect
                       value={field.value}
                       onValueChange={field.onChange}
-                      placeholder="Select Course *"
-                      items={courseOptions}
+                      placeholder="Select Activity Module *"
+                      items={activityOptions}
                       error={errors.course?.message}
                     />
                   )}
@@ -229,13 +239,20 @@ export default function EnrollPage() {
                   />
                 </FormField>
 
-                <FormField error={errors.trainingLocation?.message}>
-                  <input
-                    {...register("trainingLocation")}
-                    placeholder="Location Planned for the Training *"
-                    className="input"
-                  />
-                </FormField>
+                {/* Venue Dropdown */}
+                <Controller
+                  control={control}
+                  name="trainingLocation"
+                  render={({ field }) => (
+                    <PremiumSelect
+                      value={field.value}
+                      onValueChange={field.onChange}
+                      placeholder="Select Venue *"
+                      items={venueOptions}
+                      error={errors.trainingLocation?.message}
+                    />
+                  )}
+                />
 
                 <FormField error={errors.teamSize?.message}>
                   <input
@@ -245,6 +262,7 @@ export default function EnrollPage() {
                   />
                 </FormField>
 
+                {/* From Date */}
                 <Controller
                   control={control}
                   name="fromDate"
@@ -261,6 +279,7 @@ export default function EnrollPage() {
                   )}
                 />
 
+                {/* To Date */}
                 <Controller
                   control={control}
                   name="toDate"
@@ -280,7 +299,7 @@ export default function EnrollPage() {
                 <FormField error={errors.noOfDays?.message}>
                   <input
                     {...register("noOfDays")}
-                    placeholder="No of Days Planned (in days)"
+                    placeholder="No of Days Planned"
                     className="input"
                     readOnly
                   />
@@ -290,11 +309,12 @@ export default function EnrollPage() {
                   <input
                     {...register("budget")}
                     inputMode="numeric"
-                    placeholder="Budget"
+                    placeholder="Estimated Budget"
                     className="input"
                   />
                 </FormField>
 
+                {/* Heard From */}
                 <Controller
                   control={control}
                   name="heardFrom"
@@ -302,7 +322,7 @@ export default function EnrollPage() {
                     <PremiumSelect
                       value={field.value}
                       onValueChange={field.onChange}
-                      placeholder="How did you hear us?"
+                      placeholder="How did you hear about us?"
                       items={heardFromOptions}
                       error={errors.heardFrom?.message}
                     />
@@ -310,6 +330,7 @@ export default function EnrollPage() {
                 />
               </div>
 
+              {/* Notes */}
               <FormField error={errors.notes?.message}>
                 <textarea
                   {...register("notes")}
@@ -318,6 +339,7 @@ export default function EnrollPage() {
                 />
               </FormField>
 
+              {/* Submit */}
               <div className="flex justify-center">
                 <button
                   type="submit"
